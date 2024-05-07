@@ -71,6 +71,10 @@ static int qcm6490_snd_init(struct snd_soc_pcm_runtime *rtd)
 	case WSA_CODEC_DMA_TX_0:
 	case PRIMARY_MI2S_RX:
 	case PRIMARY_MI2S_TX:
+	case SECONDARY_MI2S_RX:
+	case SECONDARY_MI2S_TX:
+	case TERTIARY_MI2S_RX:
+	case TERTIARY_MI2S_TX:
 	case PRIMARY_TDM_RX_0:
 	case PRIMARY_TDM_TX_0:
 		break;
