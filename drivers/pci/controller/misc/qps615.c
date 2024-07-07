@@ -5,6 +5,7 @@
 #include <linux/firmware.h>
 #include <linux/i2c.h>
 #include <linux/module.h>
+#include <linux/pci.h>
 #include <linux/notifier.h>
 #include <linux/pci.h>
 
@@ -248,7 +249,7 @@ static const struct dev_pm_ops qps615_pm_ops = {
 static struct i2c_driver qps615_switch_driver = {
 	.driver = {
 		.name = DRV_NAME,
-		.pm = &qps615_pm_ops,
+		//.pm = &qps615_pm_ops,
 		.of_match_table = qps615_switch_of_match,
 	},
 	.probe = qps615_switch_probe,
