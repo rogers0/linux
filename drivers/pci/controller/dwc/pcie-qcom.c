@@ -1201,6 +1201,9 @@ static int qcom_pcie_post_init_2_9_0(struct qcom_pcie *pcie)
 	return 0;
 }
 
+extern struct blocking_notifier_head qps615_chain_head;
+int qps615_notifier_call_chain(unsigned long val, void *v);
+
 static int qcom_pcie_link_up(struct dw_pcie *pci)
 {
 	u16 offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
@@ -1208,9 +1211,6 @@ static int qcom_pcie_link_up(struct dw_pcie *pci)
 
 	return !!(val & PCI_EXP_LNKSTA_DLLLA);
 }
-
-extern struct blocking_notifier_head qps615_chain_head;
-int qps615_notifier_call_chain(unsigned long val, void *v);
 
 static int qcom_pcie_host_init(struct dw_pcie_rp *pp)
 {
@@ -1239,6 +1239,7 @@ static int qcom_pcie_host_init(struct dw_pcie_rp *pp)
 	}
 
 	qcom_ep_reset_deassert(pcie);
+
 	usleep_range(PERST_DELAY_US, PERST_DELAY_US + 500);
 	qps615_notifier_call_chain(0, NULL);
 	msleep(20);
