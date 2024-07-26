@@ -242,6 +242,7 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sm8650-qrd.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= sm8650p-addons-aim500-aiot.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= sm8650p-aim500-aiot.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= turbox-c6490p-devkit.dtb
+dtb-$(CONFIG_ARCH_QCOM)	+= turbox-c5430p-devkit.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= x1e80100-addons-crd.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= x1e80100-crd.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= x1e80100-addons-qcp.dtb
